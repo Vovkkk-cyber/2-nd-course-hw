@@ -1,0 +1,77 @@
+@media (max-width: 770px) {
+    .center {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .top {
+        height: 700px;
+        &__img-1 {
+            display: none;
+        }
+        &__img-mob {
+            display: block;
+        }
+        &-content {
+        align-items: center;
+        text-align: center;
+            &__title {
+                font-size: 40px;
+            }
+            &__text {
+                font-size: 16px;
+                line-height: 100%;
+                letter-spacing: 0px;
+                text-align: center;
+                vertical-align: middle;
+                padding-left: 24px;
+                padding-right: 24px;
+                padding-top: 24px;
+                padding-bottom: 36px;
+            }
+        }
+    }
+    .section {
+        &_for {
+            display: none;
+        }
+    }
+    .card {
+        flex-direction: column;
+        align-self: center;
+        width: 343px;
+        height: auto;
+        &__img {
+            width: 100%;
+        }
+        &-info {
+            padding: 29px;
+            &__title {
+            font-size: 32px;
+            }
+            &__text {
+                line-height: 100%;
+                letter-spacing: 0px;
+                font-size: 16px;
+                width: 249px;
+                padding-top: 16px;
+                padding-bottom: 32px;
+            }
+            &__button {
+                font-size: 16px;
+                height: 50px;
+                width: 285px;
+                align-self: center;
+            }
+        }
+        &__text-img {
+            top: 100px;
+            left: 125px;
+            height: 89px;
+            width: 89px;
+            font-size: 60px;
+        }
+    }
+    .footer{
+        height: 100px;
+    }
+}
