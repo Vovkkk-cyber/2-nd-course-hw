@@ -1,5 +1,4 @@
-let password = 'пароль';
-let passworduse = prompt('Введите пароль');
-let message = (password === passworduse)?'Пароль введен верно':'Пароль введен неправильно';
-alert(message)
+let c = 2;
+(c > 0 && c < 10)?'верно':'неверно';
+
 
