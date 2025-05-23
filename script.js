@@ -4,11 +4,13 @@ let message = (password === passworduse)?'Пароль введен верно':
 alert(message)
 
 let c = 2;
-(c > 0 && c < 10)?'верно':'неверно';// с 0, 10, -3 проверял работает
+let message1 = (c > 0 && c < 10)?'верно':'неверно';// с 0, 10, -3 проверял работает
+alert(message1)
 
 let d = 80;
 let e = 120;
-(d > 100 || e > 100)?'Верно':'Неверно';
+let message3 = (d > 100 || e > 100)?'Верно':'Неверно';
+alert(message3)
 
 let a = '2';
 let b = '3';
@@ -17,40 +19,24 @@ alert(+a + +b)
 let monthNumber = Number(prompt('Введите порядковый номер месяца'));
 switch (monthNumber) {
     case 1:
-        console.log('Зима')
-        break;
     case 2:
-        console.log('Зима')
+    case 12:
+    console.log('Зима')
         break;
     case 3:
-        console.log('Весна')
-        break;
     case 4:
-        console.log('Весна')
-        break;
     case 5:
-        console.log('Весна')
+    console.log('Весна')
         break;
     case 6:
-        console.log('Лето')
-        break;
     case 7:
-        console.log('Лето')
-        break;
     case 8:
-        console.log('Лето')
+    console.log('Лето')
         break;
     case 9:
-        console.log('Осень')
-        break;
     case 10:
-        console.log('Осень')
-        break;
     case 11:
-        console.log('Осень')
-        break;
-    case 12:
-        console.log('Зима')
+    console.log('Осень')
         break;
     default:
         console.log('Ввели что-то не то')
