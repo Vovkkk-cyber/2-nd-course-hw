@@ -105,14 +105,15 @@ a{
     background-color: rgba(188, 236, 48, 1);
     position: absolute;
     height: 90px;
-    width: 3220px;
+    width: 100%;
     bottom: 0;
     z-index: 1;
-    overflow: hidden;
+    overflow-x: hidden;
     &-menu {
         list-style-type: none;
         display: flex;
         flex-direction: row;
+        width: 3220px;
         height: 90px;
         align-items: center;
         gap: 138px;

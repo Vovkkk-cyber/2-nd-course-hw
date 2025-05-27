@@ -108,15 +108,16 @@ a {
   background-color: rgb(188, 236, 48);
   position: absolute;
   height: 90px;
-  width: 3220px;
+  width: 100%;
   bottom: 0;
   z-index: 1;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .header-menu {
   list-style-type: none;
   display: flex;
   flex-direction: row;
+  width: 3220px;
   height: 90px;
   align-items: center;
   gap: 138px;
