@@ -476,6 +476,9 @@ a {
   .section__star {
     display: none;
   }
+  .section-info__title {
+    font-size: 40px;
+  }
   .card {
     flex-direction: column;
     align-self: center;
