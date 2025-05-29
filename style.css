@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a {
   text-decoration: none;
 }
@@ -173,6 +177,7 @@ a {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 473px 551px;
   padding-top: 72px;
+  padding-bottom: 24px;
   gap: 32px;
 }
 .section-content_game {
@@ -203,6 +208,7 @@ a {
 }
 .section_game {
   position: relative;
+  padding-top: 70px;
   padding-bottom: 144px;
 }
 .section__star {
