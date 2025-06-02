@@ -5,15 +5,20 @@ function guessNumber() {
         if (userNumber > rightNumber) {
             alert('Не угадал, число меньше');
             userNumber = Number(prompt('Угадай число от 1 до 100'));
+        }  else if (userNumber === 0) {
+            alert('Пока');
+            break;
         } else if (userNumber < rightNumber) {
             alert('Не угадал, число больше');
             userNumber = Number(prompt('Угадай число от 1 до 100'));
-        } else {
+        }  else {
             alert('Ввел что-то не то');
             userNumber = Number(prompt('Угадай число от 1 до 100'));
         }
     }
-    alert('Угадал, молодец!');
+    if (userNumber === rightNumber) {
+            alert('Угадал, молодец');
+        }
 }
 
 // Задание 1
