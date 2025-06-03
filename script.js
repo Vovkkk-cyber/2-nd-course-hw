@@ -87,12 +87,7 @@ const numbers = [1, 5, 4, 10, 0, 3];
  }
 // Задание 2
 
-for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] === 4) {
-        console.log(i);
-        break;
-    }
-}
+console.log(numbers.indexOf(4));
 
 // Задание 3
 
@@ -103,19 +98,17 @@ console.log(mass);
 
 // Задание 4
 
-const arr = [
-    [1, 1, 1],
-    [1, 1, 1],
-    [1, 1, 1]
-];
+let rows = 3;
+let cols = 3;
+let arr = [];
+    for ( let i = 0;i < rows; i++) {
+        arr[i] = [];
+        for (let j = 0; j < cols; j++) {
+            arr[i][j] = 1;
+        }
+    }
+console.log(arr); // это имелось ввиду?
 
-    for ( let i = 0;i < arr.length; i++) {
-      if (i === 0) {
-         console.log(arr[i]);
-      } else {
-         console.log(arr[i]);
-      }
-   }
 // Задание 5
 
 
@@ -127,16 +120,15 @@ console.log(mas);
 // Задание 6
 
 const masss = [9, 8, 7, 'a', 6, 5];
-masss.sort();
 const dMasss = masss.filter(element => typeof element === 'number');
+dMasss.sort();
 console.log(dMasss);
 
 
 // Задание 7
 
 let userNumb = Number(prompt('Угадай число из массива'));
-let isFound = dMasss.includes(userNumb);
-if (isFound === true) {
+if (dMasss.includes(userNumb) === true) {
     alert('Угадал');
 } else {
     alert('Неугадал');
@@ -158,15 +150,15 @@ console.log(arrrey.reduce((flat, current) => flat.concat(current),));
 
 // Задание 10
 
-var masNumbers = [];
-var N = 10;
+let masNumbers = [];
+let N = 10;
 
-for (var i = 0; i < N; i++ ) {
+for (let i = 0; i < N; i++ ) {
     masNumbers.push(Math.floor(Math.random() * 10));
 }
 console.log(masNumbers);// для наглядности добавил
 
-for (var i = 0; i < masNumbers.length; i++) {
+for (let i = 0; i < masNumbers.length; i++) {
     if (i === masNumbers.length - 1) {
         break;
     }
@@ -198,10 +190,10 @@ console.log(filtrArreey);
 
 // Задание 14
 
-var massNumbers = [];
-var A = 10;
+let massNumbers = [];
+let A = 10;
 
-for (var i = 0; i < A; i++ ) {
+for (let i = 0; i < A; i++ ) {
     massNumbers.push(Math.floor(Math.random() * 10));
 }
 console.log(massNumbers);
@@ -212,10 +204,10 @@ console.log(newMassNumbers);
 
 // Задание 15
 
-var arreyNumbers = [];
-var M = 6;
+let arreyNumbers = [];
+let M = 6;
 
-for (var i = 0; i < M; i++ ) {
+for (let i = 0; i < M; i++ ) {
     arreyNumbers.push(Math.floor(Math.random() * 10));
 }
 console.log(arreyNumbers) // добавил для наглядности
