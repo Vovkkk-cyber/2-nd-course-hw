@@ -74,143 +74,153 @@ function simpleArith() {
 }
 }
 
-// Задание 1
-const numbers = [1, 5, 4, 10, 0, 3];
+// Игра 3
 
- for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] !== 10) {
-        console.log(numbers[i]);
+function ternText() {
+let userText = prompt('Введите любой текст');
+let newText = userText.split("").reverse().join("");
+alert("Получилось: " +newText);
+}
+
+
+// Игра 4
+
+function quizFun() {
+    
+const quiz = [
+           {
+               question: "Какой цвет небо?",
+               options: ["1. Красный", "2. Синий", "3. Зеленый"],
+               correctAnswer: 2 
+           },
+           {
+               question: "Сколько дней в неделе?",
+               options: ["1. Шесть", "2. Семь", "3. Восемь"],
+               correctAnswer: 2
+           },
+           {
+               question: "Сколько у человека пальцев на одной руке?",
+               options: ["1. Четыре", "2. Пять", "3. Шесть"],
+               correctAnswer: 2
+           }
+       ];
+let num = 0;
+
+for (let i = 0; i < quiz.length; i++) {
+    let quizQuest = +prompt(`Ответь на заданный вопрос: \n${quiz[i].question} \n${quiz[i].options.join('\n')}`)
+    if (quizQuest === quiz[i].correctAnswer) {
+        alert('Ответ верный');
+        num++;
     } else {
-        console.log(numbers[i]);
-        break;
+        alert('Ответ неверен');
     }
- }
+}
+alert(`Правильных ответов ${num} `)
+    }
+
+// Задание 1
+
+let str = 'js';
+console.log(str.toUpperCase());
+
 // Задание 2
 
-console.log(numbers.indexOf(4));
+function twoFunction(arrey, string) {
+    const filtrItem = arrey.filter(item => {
+        if (item.toLowerCase().startsWith(string.toLowerCase())){
+            return item;
+        }
+    })
+    return filtrItem;
+}
+
+const result = twoFunction(['book', 'journal', 'newspaper', 'banana'], 'b');
+
+console.log(result);
+
 
 // Задание 3
 
-let mass = [1, 3, 5, 10, 20];
-mass = mass.join(' ');
-console.log(mass);
+let z = 32.58884;
 
+console.log(Math.floor(z));
+console.log(Math.ceil(z));
+console.log(Math.round(z));
 
 // Задание 4
 
-let rows = 3;
-let cols = 3;
-let arr = [];
-    for ( let i = 0;i < rows; i++) {
-        arr[i] = [];
-        for (let j = 0; j < cols; j++) {
-            arr[i][j] = 1;
-        }
-    }
-console.log(arr); // это имелось ввиду?
+const arey = [52, 53, 49, 77, 21, 32];
+
+console.log(`Минимальное значение ${Math.min(...arey)}`);
+console.log(`Максимальное значение ${Math.max(...arey)}`);
 
 // Задание 5
 
+let numb = Math.floor(Math.random() * 10 + 1);
 
-const mas = [1, 1, 1];
-mas.push(2, 2, 2);
-
-console.log(mas);
+console.log(numb);
 
 // Задание 6
 
-const masss = [9, 8, 7, 'a', 6, 5];
-const dMasss = masss.filter(element => typeof element === 'number');
-dMasss.sort();
-console.log(dMasss);
-
+const arrNumb = [];
+for (let i = 0; i < Math.floor(numb / 2); i++) {
+    arrNumb.push(Math.floor(Math.random() * numb));
+    
+}
+console.log(arrNumb);
 
 // Задание 7
+function difMath(v, q) {
+    v = Math.floor(Math.random() * 10 + 1);
+    q = Math.ceil(Math.random() * 10 + 1);
+console.log(`Диапозон ${v}`);
+console.log (`Диапозон ${q}`);
+    if (v > q) {
+return Math.floor(Math.random() * (v - q) + 1) + q;
+    } if (v === q) {
+        return v
+    }else {
+        return Math.floor(Math.random() * (q - v) + 1) + v;
+    }
 
-let userNumb = Number(prompt('Угадай число из массива'));
-if (dMasss.includes(userNumb) === true) {
-    alert('Угадал');
-} else {
-    alert('Неугадал');
 }
 
+console.log(difMath())
 
 // Задание 8
 
-let text = 'abcdef';
-let splitText = text.split('').reverse().join('')
-console.log(splitText);
+let nowDate = Date();
 
-
+console.log(nowDate);
 
 // Задание 9
 
-let arrrey = [[1, 2, 3],[4, 5, 6]];
-console.log(arrrey.reduce((flat, current) => flat.concat(current),));
+let currentDate = new Date();
+currentDate.setDate(currentDate.getDate() + 73);
+
+console.log(currentDate);
 
 // Задание 10
+// аписать функцию, которая принимает дату и возвращает ее в формате:
 
-let masNumbers = [];
-let N = 10;
 
-for (let i = 0; i < N; i++ ) {
-    masNumbers.push(Math.floor(Math.random() * 10));
+// Дата: [число] [месяц на русском] [год] — это [день недели на русском].
+// Время: [часы]:[минуты]:[секунды]
+
+function dateFunction() {
+
+const days = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг",
+"Пятница", "Суббота"];
+const months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
+"Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
+
+let myDate = new Date();
+
+let fullDate = "Дата: " + myDate.getDate() + " " + months[myDate.getMonth()] + " " + myDate.getFullYear() + " - это " + days[myDate.getDay()]; 
+
+let fullTime = "Время: " + myDate.getHours() + ":" + myDate.getMinutes() + ":" + myDate.getSeconds();
+
+console.log(fullDate);
+console.log(fullTime);
 }
-console.log(masNumbers);// для наглядности добавил
-
-for (let i = 0; i < masNumbers.length; i++) {
-    if (i === masNumbers.length - 1) {
-        break;
-    }
-console.log(masNumbers[i] + masNumbers[i + 1]);
-
-}
-
-// Задание 11
-
-const boxMasNumbers = masNumbers.map(masNumber => masNumber**2);
-console.log(boxMasNumbers);
-
-
-// Задание 12
-
-let length = ["Dima", "Vlad", "Vova", "Micha"].map(item => item.length);
-
-console.log(length);
-
-
-// Задание 13
-
-const arreey = [2, -2, 5, -6, 10, -33];
-
-const filtrArreey = arreey.filter(arreey => arreey < 0);
-
-console.log(filtrArreey);
-
-
-// Задание 14
-
-let massNumbers = [];
-let A = 10;
-
-for (let i = 0; i < A; i++ ) {
-    massNumbers.push(Math.floor(Math.random() * 10));
-}
-console.log(massNumbers);
-
-let newMassNumbers = massNumbers.filter(massNumbers => massNumbers % 2 === 0);
-console.log(newMassNumbers);
-
-
-// Задание 15
-
-let arreyNumbers = [];
-let M = 6;
-
-for (let i = 0; i < M; i++ ) {
-    arreyNumbers.push(Math.floor(Math.random() * 10));
-}
-console.log(arreyNumbers) // добавил для наглядности
-
-let midArreyNumbers = arreyNumbers.reduce((acc, item) => acc + item, 0) / M;
-console.log(midArreyNumbers);
+dateFunction()
