@@ -107,10 +107,14 @@ const quiz = [
 let num = 0;
 
 for (let i = 0; i < quiz.length; i++) {
-    let quizQuest = +prompt(`Ответь на заданный вопрос: \n${quiz[i].question} \n${quiz[i].options.join('\n')}`)
+    let userInput = prompt(`Ответь на заданный вопрос: \n${quiz[i].question} \n${quiz[i].options.join('\n')}`)
+    let quizQuest = Number(userInput);
     if (quizQuest === quiz[i].correctAnswer) {
         alert('Ответ верный');
         num++;
+    } else if (userInput === null) {
+        alert('Пока')
+        break;
     } else {
         alert('Ответ неверен');
     }
@@ -118,109 +122,156 @@ for (let i = 0; i < quiz.length; i++) {
 alert(`Правильных ответов ${num} `)
     }
 
+
+// Игра 5
+
+function rockPaperScissors() {
+    
+//     const choice = ["1. Камень", "2. Ножницы", "3. Бумага"]
+
+//     let n = Math.floor(Math.random() * 3);
+//     for (let i = 0; i < choice.length; i++) {
+//     let userInput = prompt(`Сделай свой выбор: \n${choice}`);
+//     let userChoice = Number(userInput) - 1;
+//     if (n === userChoice) {
+//         alert(`Компьютер выбрал ${choice[n]}, Игрок выбрал ${choice[userChoice]}. Ничья`);
+//         break;
+//     } else if (n === 0 && userChoice === 1 || n === 1 && userChoice === 2 || n === 2 && userChoice === 0) {
+//         alert(`Компьютер выбрал ${choice[n]}, Игрок выбрал ${choice[userChoice]}. Победил Компьютер`);
+//         break;
+//     } else if (n === 1 && userChoice === 0 || n === 2 && userChoice === 1 || n === 0 && userChoice === 2) {
+//         alert(`Компьютер выбрал ${choice[n]}, Игрок выбрал ${choice[userChoice]}. Победил Игрок`);
+//         break;
+//     } else if (userInput === null) {
+//             alert('Пока, приходи ещё.');
+//             break;
+//     } else {
+//         alert('Ввел что-то не так');
+//         userInput = prompt(`Сделай свой выбор: \n${choice}`);
+//         userChoice = Number(userInput) - 1;
+//     }
+// }
+
+const choice = ["камень", "ножницы", "бумага"]
+
+    let joinChoice = choice.join(", ");
+    let userInput = prompt(`Сделай свой выбор: \n${joinChoice}`);
+
+    const userChoice = userInput.toLocaleLowerCase();
+    let n = Math.floor(Math.random() * 3);
+    const computer = choice[n];
+ const winner = {
+    камень: "ножницы",
+    ножницы: "бумага",
+    бумага: "камень"
+ }
+ const lose = {
+    камень: "бумага",
+    ножницы: "камень",
+    бумага: "ножницы"
+ }
+ if (userChoice === computer) {
+    alert(`Игрок выбрал ${userInput} Компьютер выбрал ${computer}.Ничья`);
+ } else if (winner[userChoice] === computer) {
+    alert(`Игрок выбрал ${userInput} Компьютер выбрал ${computer}. Игрок победил`);
+ } else if (lose[userChoice] === computer) {
+    alert(`Игрок выбрал ${userInput} Компьютер выбрал ${computer}. Компютер победил`);
+ } else if (userInput === null){
+    alert('Пока');
+} else {
+    alert('Проверь правильность ввода');
+    joinChoice = choice.join(", ");
+    userInput = prompt(`Сделай свой выбор: \n${joinChoice}`)
+ }
+}
+// сделал два варианта
+
+
+
 // Задание 1
 
-let str = 'js';
-console.log(str.toUpperCase());
+const people = [
+   { name: 'Глеб', age: 29 },
+   { name: 'Анна', age: 17 },
+   { name: 'Олег', age: 7 },
+   { name: 'Оксана', age: 47 }
+];
+
+console.log(people.sort((people1, people2) => people1['age'] > people2['age']? 1: -1));
 
 // Задание 2
 
-function twoFunction(arrey, string) {
-    const filtrItem = arrey.filter(item => {
-        if (item.toLowerCase().startsWith(string.toLowerCase())){
-            return item;
-        }
-    })
-    return filtrItem;
+function isPositive(num) {
+return num >= 0;
+}
+function isMale(num) {
+return num.gender === 'male';
+}
+function filter(arrey, ruleFunction) {
+const result = [];
+for (let i = 0; i < arrey.length; i++) {
+    if (ruleFunction(arrey[i])) {
+        result.push(arrey[i]);
+    }  
+    }
+    return result;
 }
 
-const result = twoFunction(['book', 'journal', 'newspaper', 'banana'], 'b');
+console.log(filter([3, -4, 1, 9], isPositive));
 
-console.log(result);
+const peoples = [
+   {name: 'Глеб', gender: 'male'},
+   {name: 'Анна', gender: 'female'},
+   {name: 'Олег', gender: 'male'},
+   {name: 'Оксана', gender: 'female'}
+];
+
+console.log(filter(peoples, isMale));
 
 
 // Задание 3
 
-let z = 32.58884;
+const timer = () => { 
+    const interval = setInterval(() => {
+        console.log(Date());}, 3000);
+    
+    setTimeout(() => {
+   clearInterval(interval);
+      console.log('30 секунд прошло')
+   }, 30000);
+}
 
-console.log(Math.floor(z));
-console.log(Math.ceil(z));
-console.log(Math.round(z));
+timer();
+
+
 
 // Задание 4
 
-const arey = [52, 53, 49, 77, 21, 32];
+function delayForSecond(callback) {
+setTimeout(callback, 1000);
+}
 
-console.log(`Минимальное значение ${Math.min(...arey)}`);
-console.log(`Максимальное значение ${Math.max(...arey)}`);
+delayForSecond(function () {
+   console.log('Привет, Глеб!');
+})
 
 // Задание 5
 
-let numb = Math.floor(Math.random() * 10 + 1);
-
-console.log(numb);
-
-// Задание 6
-
-const arrNumb = [];
-for (let i = 0; i < Math.floor(numb / 2); i++) {
-    arrNumb.push(Math.floor(Math.random() * numb));
-    
-}
-console.log(arrNumb);
-
-// Задание 7
-function difMath(v, q) {
-    v = Math.floor(Math.random() * 10 + 1);
-    q = Math.ceil(Math.random() * 10 + 1);
-console.log(`Диапозон ${v}`);
-console.log (`Диапозон ${q}`);
-    if (v > q) {
-return Math.floor(Math.random() * (v - q) + 1) + q;
-    } if (v === q) {
-        return v
-    }else {
-        return Math.floor(Math.random() * (q - v) + 1) + v;
-    }
-
+// Функция delayForSecond через 1 секунду пишет в консоль 
+// «Прошла одна секунда», а затем вызывает переданный колбэк
+function delayForSecond2(cb) {
+    setTimeout(() => {
+        console.log('Прошла одна секунда');
+        if(cb) {  cb(); }
+    }, 1000)
 }
 
-console.log(difMath())
-
-// Задание 8
-
-let nowDate = Date();
-
-console.log(nowDate);
-
-// Задание 9
-
-let currentDate = new Date();
-currentDate.setDate(currentDate.getDate() + 73);
-
-console.log(currentDate);
-
-// Задание 10
-// аписать функцию, которая принимает дату и возвращает ее в формате:
-
-
-// Дата: [число] [месяц на русском] [год] — это [день недели на русском].
-// Время: [часы]:[минуты]:[секунды]
-
-function dateFunction() {
-
-const days = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг",
-"Пятница", "Суббота"];
-const months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
-"Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
-
-let myDate = new Date();
-
-let fullDate = "Дата: " + myDate.getDate() + " " + months[myDate.getMonth()] + " " + myDate.getFullYear() + " - это " + days[myDate.getDay()]; 
-
-let fullTime = "Время: " + myDate.getHours() + ":" + myDate.getMinutes() + ":" + myDate.getSeconds();
-
-console.log(fullDate);
-console.log(fullTime);
+// Функция sayHi выводит в консоль приветствие для указанного имени
+function sayHi (name) {
+    console.log(`Привет, ${name}!`);
 }
-dateFunction()
+
+// Код выше менять нельзя
+
+// Нужно изменить код ниже:
+delayForSecond2(() => sayHi('Хлеб'));
