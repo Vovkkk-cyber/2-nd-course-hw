@@ -127,31 +127,6 @@ alert(`Правильных ответов ${num} `)
 
 function rockPaperScissors() {
     
-//     const choice = ["1. Камень", "2. Ножницы", "3. Бумага"]
-
-//     let n = Math.floor(Math.random() * 3);
-//     for (let i = 0; i < choice.length; i++) {
-//     let userInput = prompt(`Сделай свой выбор: \n${choice}`);
-//     let userChoice = Number(userInput) - 1;
-//     if (n === userChoice) {
-//         alert(`Компьютер выбрал ${choice[n]}, Игрок выбрал ${choice[userChoice]}. Ничья`);
-//         break;
-//     } else if (n === 0 && userChoice === 1 || n === 1 && userChoice === 2 || n === 2 && userChoice === 0) {
-//         alert(`Компьютер выбрал ${choice[n]}, Игрок выбрал ${choice[userChoice]}. Победил Компьютер`);
-//         break;
-//     } else if (n === 1 && userChoice === 0 || n === 2 && userChoice === 1 || n === 0 && userChoice === 2) {
-//         alert(`Компьютер выбрал ${choice[n]}, Игрок выбрал ${choice[userChoice]}. Победил Игрок`);
-//         break;
-//     } else if (userInput === null) {
-//             alert('Пока, приходи ещё.');
-//             break;
-//     } else {
-//         alert('Ввел что-то не так');
-//         userInput = prompt(`Сделай свой выбор: \n${choice}`);
-//         userChoice = Number(userInput) - 1;
-//     }
-// }
-
 const choice = ["камень", "ножницы", "бумага"]
 
     let joinChoice = choice.join(", ");
@@ -184,94 +159,67 @@ const choice = ["камень", "ножницы", "бумага"]
     userInput = prompt(`Сделай свой выбор: \n${joinChoice}`)
  }
 }
-// сделал два варианта
-
 
 
 // Задание 1
 
-const people = [
-   { name: 'Глеб', age: 29 },
-   { name: 'Анна', age: 17 },
-   { name: 'Олег', age: 7 },
-   { name: 'Оксана', age: 47 }
-];
+const topContentEL = document.querySelector('.top-content__title');
+const buttonHideEl = document.querySelector('.button__hide');
 
-console.log(people.sort((people1, people2) => people1['age'] > people2['age']? 1: -1));
+buttonHideEl.addEventListener('click', () => {
+    topContentEL.style.display = topContentEL.style.display === 'none' ? 'block' : 'none';
+} )
 
 // Задание 2
 
-function isPositive(num) {
-return num >= 0;
-}
-function isMale(num) {
-return num.gender === 'male';
-}
-function filter(arrey, ruleFunction) {
-const result = [];
-for (let i = 0; i < arrey.length; i++) {
-    if (ruleFunction(arrey[i])) {
-        result.push(arrey[i]);
-    }  
-    }
-    return result;
-}
+const topContenTextEL = document.querySelector('.top-content__text');
+const buttonColorEl = document.querySelector('.button__color');
 
-console.log(filter([3, -4, 1, 9], isPositive));
-
-const peoples = [
-   {name: 'Глеб', gender: 'male'},
-   {name: 'Анна', gender: 'female'},
-   {name: 'Олег', gender: 'male'},
-   {name: 'Оксана', gender: 'female'}
-];
-
-console.log(filter(peoples, isMale));
-
+buttonColorEl.addEventListener('click', () => {
+    topContenTextEL.style.color = 'blue';
+})
 
 // Задание 3
 
-const timer = () => { 
-    const interval = setInterval(() => {
-        console.log(Date());}, 3000);
-    
-    setTimeout(() => {
-   clearInterval(interval);
-      console.log('30 секунд прошло')
-   }, 30000);
-}
+const buttonChoiceEl = document.querySelector('.button__choice');
 
-timer();
-
+buttonChoiceEl.addEventListener('click', () => {
+    topContentEL.textContent = 'Привет, мир!';
+})
 
 
 // Задание 4
 
-function delayForSecond(callback) {
-setTimeout(callback, 1000);
-}
+const textEl = document.querySelectorAll('.description');
 
-delayForSecond(function () {
-   console.log('Привет, Глеб!');
-})
+textEl.forEach( element => {
+    element.textContent = 'Измененный текст';
+}) ;
+// В задании сказанно использовать querySelectorAll, но в критерии оцеки querySelector. несостыковка
 
 // Задание 5
 
-// Функция delayForSecond через 1 секунду пишет в консоль 
-// «Прошла одна секунда», а затем вызывает переданный колбэк
-function delayForSecond2(cb) {
-    setTimeout(() => {
-        console.log('Прошла одна секунда');
-        if(cb) {  cb(); }
-    }, 1000)
+textEl.forEach( element => {
+    element.textContent = 'Новый текст';
+}) ;
+
+// Задание 6
+const contentEl = document.querySelector('.top-content')
+const buttonNewEl = document.querySelector('.button__new');
+
+buttonNewEl.addEventListener('click', () => {
+    const newTextEl = document.createElement('p');
+    newTextEl.textContent = 'Новый абзац';
+    newTextEl.classList.add('description');
+    contentEl.appendChild(newTextEl);
+});
+
+// Задание 7
+
+const buttonDeletEl = document.querySelector('.button__delet');
+
+buttonDeletEl.addEventListener('click', () => {
+    const descriptionEL = document.querySelector('.description')
+    descriptionEL.remove();
 }
-
-// Функция sayHi выводит в консоль приветствие для указанного имени
-function sayHi (name) {
-    console.log(`Привет, ${name}!`);
-}
-
-// Код выше менять нельзя
-
-// Нужно изменить код ниже:
-delayForSecond2(() => sayHi('Хлеб'));
+)
