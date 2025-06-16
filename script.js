@@ -154,72 +154,21 @@ const choice = ["камень", "ножницы", "бумага"]
  } else if (userInput === null){
     alert('Пока');
 } else {
-    alert('Проверь правильность ввода');
-    joinChoice = choice.join(", ");
-    userInput = prompt(`Сделай свой выбор: \n${joinChoice}`)
+    alert('Проверь правильность ввода и сыграй заново');
  }
 }
 
 
-// Задание 1
-
-const topContentEL = document.querySelector('.top-content__title');
-const buttonHideEl = document.querySelector('.button__hide');
-
-buttonHideEl.addEventListener('click', () => {
-    topContentEL.style.display = topContentEL.style.display === 'none' ? 'block' : 'none';
-} )
-
-// Задание 2
-
-const topContenTextEL = document.querySelector('.top-content__text');
-const buttonColorEl = document.querySelector('.button__color');
-
-buttonColorEl.addEventListener('click', () => {
-    topContenTextEL.style.color = 'blue';
-})
-
-// Задание 3
-
-const buttonChoiceEl = document.querySelector('.button__choice');
-
-buttonChoiceEl.addEventListener('click', () => {
-    topContentEL.textContent = 'Привет, мир!';
-})
+// Игра 6
 
 
-// Задание 4
-
-const textEl = document.querySelectorAll('.description');
-
-textEl.forEach( element => {
-    element.textContent = 'Измененный текст';
-}) ;
-// В задании сказанно использовать querySelectorAll, но в критерии оцеки querySelector. несостыковка
-
-// Задание 5
-
-textEl.forEach( element => {
-    element.textContent = 'Новый текст';
-}) ;
-
-// Задание 6
-const contentEl = document.querySelector('.top-content')
-const buttonNewEl = document.querySelector('.button__new');
-
-buttonNewEl.addEventListener('click', () => {
-    const newTextEl = document.createElement('p');
-    newTextEl.textContent = 'Новый абзац';
-    newTextEl.classList.add('description');
-    contentEl.appendChild(newTextEl);
-});
-
-// Задание 7
-
-const buttonDeletEl = document.querySelector('.button__delet');
-
-buttonDeletEl.addEventListener('click', () => {
-    const descriptionEL = document.querySelector('.description')
-    descriptionEL.remove();
-}
-)
+    const sectionEL = document.querySelector('.section_game');
+    const colorGenerator = document.querySelector('.card-info__button_game');
+    colorGenerator.addEventListener('click', () => {
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+        sectionEL.style.backgroundColor = `rgb(${r},${g},${b})`
+    });
+    
+    

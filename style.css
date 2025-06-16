@@ -125,6 +125,7 @@ a {
   height: 90px;
   align-items: center;
   gap: 138px;
+  animation: marquee 20s infinite linear;
 }
 .header-menu__link {
   font-family: "Montserrat", sans-serif;
@@ -284,18 +285,6 @@ a {
 }
 .games__img_6 {
   background-color: rgb(39, 26, 88);
-}
-.games__text-img {
-  position: absolute;
-  align-self: center;
-  background-color: rgb(255, 199, 0);
-  top: 110px;
-  left: 145px;
-  height: 89px;
-  width: 89px;
-  font-size: 60px;
-  transform: rotate(11deg);
-  text-align: center;
 }
 .games-info {
   display: flex;
@@ -523,5 +512,13 @@ a {
   }
   .footer {
     height: 100px;
+  }
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(40%);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }/*# sourceMappingURL=style.css.map */
