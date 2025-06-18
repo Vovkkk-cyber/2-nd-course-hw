@@ -84,6 +84,9 @@ a{
             padding-right: 49px;
             padding-bottom: 48px;
         }
+        &__textg {
+            font-weight: 600;
+        }
         &__button {
             background: $color-text;
             border: 1px solid transparent; 
@@ -104,6 +107,9 @@ a{
                     border-color:rgba(32, 32, 39, 1) ;
                     color: rgba(32, 32, 39, 1);
         }
+    }
+    &__button1 {
+        display: none;
     }
 }
 }
@@ -169,6 +175,9 @@ a{
             letter-spacing: 0px;
             vertical-align: middle;
             color: rgba(255, 255, 255, 1);
+        }
+        &__scr {
+            display: none;
         }
     }
     &-content {

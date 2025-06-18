@@ -86,6 +86,9 @@ a {
   padding-right: 49px;
   padding-bottom: 48px;
 }
+.top-content__textg {
+  font-weight: 600;
+}
 .top-content__button {
   background: rgb(32, 32, 39);
   border: 1px solid transparent;
@@ -106,6 +109,9 @@ a {
   background-color: rgb(255, 255, 255);
   border-color: rgb(32, 32, 39);
   color: rgb(32, 32, 39);
+}
+.top-content__button1 {
+  display: none;
 }
 
 .header {
@@ -172,6 +178,9 @@ a {
   letter-spacing: 0px;
   vertical-align: middle;
   color: rgb(255, 255, 255);
+}
+.section-info__scr {
+  display: none;
 }
 .section-content {
   display: grid;
@@ -440,6 +449,7 @@ a {
   }
   .top {
     height: 700px;
+    align-items: flex-start;
   }
   .top__img-1 {
     display: none;
@@ -447,23 +457,86 @@ a {
   .top__img-mob {
     display: block;
   }
+  .top__img-2 {
+    width: 35px;
+    height: 35px;
+  }
+  .top__img-3 {
+    width: 21px;
+    height: 21px;
+  }
+  .top__img-4 {
+    width: 39px;
+    height: 41px;
+    right: 34px;
+    bottom: 79.3px;
+  }
+  .top__img-5 {
+    width: 18px;
+    height: 18px;
+    right: 86px;
+    bottom: 121px;
+  }
   .top-content {
+    padding-top: 147px;
     align-items: center;
     text-align: center;
   }
   .top-content__title {
     font-size: 40px;
+    line-height: normal;
   }
   .top-content__text {
+    font-weight: 400;
     font-size: 16px;
-    line-height: 100%;
-    letter-spacing: 0px;
+    line-height: normal;
     text-align: center;
     vertical-align: middle;
     padding-left: 24px;
     padding-right: 24px;
     padding-top: 24px;
     padding-bottom: 36px;
+  }
+  .top-content__button {
+    display: none;
+  }
+  .top-content__button1 {
+    display: block;
+    width: 285px;
+    height: 55px;
+    font-size: 16px;
+    background: rgb(32, 32, 39);
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    border-radius: 60px;
+    line-height: 142%;
+    color: rgb(255, 255, 255);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    align-content: center;
+    text-align: center;
+    cursor: pointer;
+  }
+  .top-content__button1:hover {
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(32, 32, 39);
+    color: rgb(32, 32, 39);
+  }
+  .header {
+    height: 51.3px;
+  }
+  .header-menu {
+    width: 1717.4px;
+    height: 51.3px;
+    gap: 74px;
+  }
+  .header-menu__link {
+    font-size: 16px;
+  }
+  .header-menu__link::after {
+    content: url(img/Star-m.svg);
+    padding-left: 24.7px;
+    position: absolute;
   }
   .section_for {
     display: none;
@@ -473,6 +546,18 @@ a {
   }
   .section-info__title {
     font-size: 40px;
+  }
+  .section-info__scr {
+    display: block;
+  }
+  .section_game {
+    padding-top: 48px;
+    padding-bottom: 10px;
+  }
+  .section-content {
+    padding-top: 48px;
+    gap: 24px;
+    padding-bottom: 0px;
   }
   .card {
     flex-direction: column;
@@ -512,6 +597,9 @@ a {
   }
   .footer {
     height: 100px;
+  }
+  .footer__text {
+    font-size: 16px;
   }
 }
 @keyframes marquee {
