@@ -2,7 +2,13 @@
     margin:0;
     padding: 0;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 @import 'variables';
+
 a{
     text-decoration: none;
 }
@@ -78,6 +84,9 @@ a{
             padding-right: 49px;
             padding-bottom: 48px;
         }
+        &__textg {
+            font-weight: 600;
+        }
         &__button {
             background: $color-text;
             border: 1px solid transparent; 
@@ -99,23 +108,28 @@ a{
                     color: rgba(32, 32, 39, 1);
         }
     }
+    &__button1 {
+        display: none;
+    }
 }
 }
 .header {
     background-color: rgba(188, 236, 48, 1);
     position: absolute;
     height: 90px;
-    width: 3220px;
+    width: 100%;
     bottom: 0;
     z-index: 1;
-    overflow: hidden;
+    overflow-x: hidden;
     &-menu {
         list-style-type: none;
         display: flex;
         flex-direction: row;
+        width: 3220px;
         height: 90px;
         align-items: center;
         gap: 138px;
+        animation: marquee 20s infinite linear;
         &__link {
             font-family: "Montserrat", sans-serif;
             font-weight: 700;
@@ -162,12 +176,16 @@ a{
             vertical-align: middle;
             color: rgba(255, 255, 255, 1);
         }
+        &__scr {
+            display: none;
+        }
     }
     &-content {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 473px 551px;
         padding-top: 72px;
+        padding-bottom: 24px;
         gap: 32px;
         &_game {
             display: flex;
@@ -198,6 +216,7 @@ a{
     }
     &_game {
         position: relative;
+        padding-top: 70px;
         padding-bottom: 144px;
     }
     &__star {
@@ -273,18 +292,7 @@ a{
             background-color: rgba(39, 26, 88, 1);
         }
     }
-    &__text-img {
-        position: absolute;
-        align-self: center;
-        background-color: rgb(255, 199, 0);
-        top: 110px;
-        left: 145px;
-        height: 89px;
-        width: 89px;
-        font-size: 60px;
-        transform: rotate(11deg);
-        text-align: center;
-    }
+    
     &-info {
         display: flex;
         flex-direction: column-reverse;
@@ -433,4 +441,12 @@ a{
         vertical-align: middle;
     }
 }
-@import'moblie'
+@import'moblie';
+@keyframes marquee {
+0% {
+    transform: translateX(40%);
+}
+100% {
+    transform: translateX(-100%);
+}
+}
